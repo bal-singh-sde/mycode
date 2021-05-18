@@ -4,11 +4,11 @@ import requests
 
 
 def main():
-    r = requests.get("http://api.open-notify.org/astros.json")
+    r = requests.get("http://api.open-notify.org/astros.json").json()
 
-    print("People in space:", r.json()['number'])
+    print("People in space:", r['number'])
 
-    for i in r.json()['people']:
+    for i in r['people']:
         print(i['name'], "is on the", i['craft'])
 
 
